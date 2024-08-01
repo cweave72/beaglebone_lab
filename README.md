@@ -4,8 +4,10 @@
 
 Workspace for building custom image for the Beaglebone Black.
 
+```bash
 git clone https://github.com/cweave72/beaglebone_lab.git
 git submodule update --init --recursive
+```
 
 ## Build init
 
@@ -15,11 +17,23 @@ After a clean checkout, to initialize the build workspace using the meta-bbb-lab
 template:
 
 ```bash
-. init_ws.sh --init [builddir (default:buld)]
+. init_build.sh -h
+
+Script to initialize Yocto configuration (must be sourced).
+Usage:
+. init_build.sh [OPTIONS] [build_dir]
+Options:
+    -h --help    : Prints this message.
+    --init       : Initialized the env with TEMPLATECONF.
+```
+
+To create the build directory initially:
+```bash
+. init_build <name_of_builddir>
 ```
 
 To simply activate the environment (previously ran `--init`):
 
 ```bash
-. init_ws.sh
+. init_build.sh
 ```
